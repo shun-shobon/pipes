@@ -1,0 +1,27 @@
+name: Test
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup | Get tool version
+        id: tool-version
+        run: |
+          bun=$(grep -E '^bun' .tool-versions)
+          echo "bun=${bun#bun }" >> $GITHUB_OUTPUT
+
+      - name: Setup | Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ steps.tool-version.outputs.bun }}
+
+      - name: Setup | Install dependencies
+        run: bun install
+
+      - name: Run | Test
+        run: bun run test

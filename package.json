@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "bun x tsc -p tsconfig.build.json",
-    "test": "bun test"
+    "test": "bun test --coverage"
   },
   "devDependencies": {
     "bun-types": "latest",
