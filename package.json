@@ -2,14 +2,21 @@
   "name": "@shun-shobon/pipes",
   "version": "0.1.0",
   "description": "A simple pipe library for TypeScript",
+  "license": "MIT",
+  "author": "Shuntaro Nishizawa <me@s2n.tech>",
+  "repository": "https://github.com/shun-shobon/pipes.git",
   "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "files": [
     "dist",
     "src",
     "README.md"
   ],
   "scripts": {
-    "build": "bun x tsc -p tsconfig.build.json"
+    "build": "bun x tsc -p tsconfig.build.json",
+    "test": "bun test"
   },
   "devDependencies": {
     "bun-types": "latest",
