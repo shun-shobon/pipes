@@ -1,0 +1,33 @@
+name: Release
+on:
+  workflow_call:
+    secrets:
+      NPM_TOKEN:
+        required: true
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - name: npm
+            url: https://registry.npmjs.org/
+          - name: GitHub Packages
+            url: https://npm.pkg.github.com/
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup | Registry
+        run: npm config set registry ${{ matrix.url }}
+
+      - name: Publish | ${{ matrix.name }}
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ matrix.name == 'npm' && secrets.NPM_TOKEN || secrets.GITHUB_TOKEN }}
