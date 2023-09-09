@@ -1,4 +1,5 @@
-import { expect, describe, test } from "bun:test";
+import { describe, expect, test } from "bun:test";
+
 import { pipe } from "../src/index.js";
 
 describe("pipe", () => {

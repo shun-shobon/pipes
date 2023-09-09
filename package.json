@@ -16,10 +16,13 @@
   ],
   "scripts": {
     "build": "bun x tsc -p tsconfig.build.json",
-    "test": "bun test --coverage"
+    "test": "bun test --coverage",
+    "lint": "bun x eslint ."
   },
   "devDependencies": {
+    "@shun-shobon/eslint-config-base": "^1.0.5",
     "bun-types": "latest",
+    "eslint": "^8.49.0",
     "typescript": "^5.2.2"
   }
 }
