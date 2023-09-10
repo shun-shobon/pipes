@@ -22,7 +22,6 @@ jobs:
         with:
           token: ${{ steps.token.outputs.token }}
           release-type: node
-          release-as: 0.1.0
 
   release:
     needs: release-please
