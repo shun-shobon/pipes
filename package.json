@@ -21,7 +21,7 @@
     "lint": "bun x eslint ."
   },
   "devDependencies": {
-    "@shun-shobon/eslint-config-base": "^1.0.5",
+    "@shun-shobon/eslint-config-base": "^1.0.6",
     "bun-types": "latest",
     "eslint": "^8.50.0",
     "typescript": "^5.2.2"
