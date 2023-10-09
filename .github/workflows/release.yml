@@ -24,6 +24,23 @@ jobs:
       - name: Setup | Checkout
         uses: actions/checkout@v4
 
+      - name: Setup | Get tool version
+        id: tool-version
+        run: |
+          bun=$(grep -E '^bun' .tool-versions)
+          echo "bun=${bun#bun }" >> $GITHUB_OUTPUT
+
+      - name: Setup | Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ steps.tool-version.outputs.bun }}
+
+      - name: Setup | Install dependencies
+        run: bun install
+
+      - name: Run | Build
+        run: bun run build
+
       - name: Setup | Registry
         uses: actions/setup-node@v3
         with:
