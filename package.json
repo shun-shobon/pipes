@@ -6,6 +6,8 @@
   "author": "Shuntaro Nishizawa <me@s2n.tech>",
   "repository": "https://github.com/shun-shobon/pipes.git",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js"
   },
