@@ -4,5 +4,6 @@
     "composite": true,
     "types": ["bun-types"]
   },
-  "include": ["./src", "./tests"]
+  "include": ["./src", "./tests"],
+  "exclude": ["**/node_modules", "**/.*", "./dist"]
 }
