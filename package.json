@@ -26,6 +26,6 @@
     "@shun-shobon/eslint-config-base": "^1.0.14",
     "bun-types": "latest",
     "eslint": "^8.57.0",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.4"
   }
 }
