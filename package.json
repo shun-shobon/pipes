@@ -25,7 +25,7 @@
   "devDependencies": {
     "@shun-shobon/eslint-config-base": "^1.0.14",
     "bun-types": "latest",
-    "eslint": "^8.57.1",
+    "eslint": "^9.15.0",
     "typescript": "^5.6.3"
   }
 }
